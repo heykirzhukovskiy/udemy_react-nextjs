@@ -1,30 +1,32 @@
 html,
 body {
-	margin: 0;
-	padding: 0;
-	background: var(--background);
+  margin: 0;
+  padding: 0;
+  background: var(--background);
 
-	color: var(--black);
-	font-family: var(--font-family);
+  color: var(--black);
+  font-family: var(--font-family);
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 
-	color: inherit;
+  color: inherit;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-	--background: #F5F6F8;
-	--black: #3B434E;
-	--white: white;
-	--primary: #7653FC;
-	--red: #FC836D;
-	--additional: #1DC47E;
-	--additional-light: #C8F8E4;
-	--font-family: 'Noto Sans KR', sans-serif;
+  --background: #f5f6f8;
+  --black: #3b434e;
+	--gray-light: #ebebeb;
+  --white: white;
+  --primary: #7653fc;
+  --primary-hover: #6541f7;
+  --red: #fc836d;
+  --green: #1dc47e;
+  --green-light: #c8f8e4;
+  --font-family: 'Noto Sans KR', sans-serif;
 }
