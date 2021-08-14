@@ -1,2 +1,2 @@
-export { Htag } from './Htag';
-export { Button } from './Button';
+export * from './Htag'
+export * from './Button'
