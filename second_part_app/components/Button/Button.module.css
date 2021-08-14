@@ -33,12 +33,19 @@
 }
 
 .arrow {
-	margin-left: 11px;
-	height: 10px;
+	margin-left: 10px;
 	display: inline-block;
 	transition: all 0.3s;
 }
 
-.down > img {
+.arrow svg {
+	transition: all 0.3s;
+}
+
+.down {
 	transform: rotate(90deg);
+}
+
+.primary svg, .ghost:hover svg {
+	fill: var(--white);
 }
