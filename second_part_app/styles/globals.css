@@ -21,7 +21,8 @@ a {
 :root {
   --background: #f5f6f8;
   --black: #3b434e;
-  --gray-light: #ebebeb;
+  --gray: #b3c0d9;
+  --grey: #ebebeb;
   --white: white;
   --primary: #7653fc;
   --primary-hover: #6541f7;
