@@ -16,19 +16,20 @@
 		"react-dom": "17.0.2"
 	},
 	"devDependencies": {
-		"@svgr/webpack": "^5.5.0",
-		"@types/classnames": "^2.3.1",
+		"@babel/core": "^7.0.0-0",
+		"@svgr/webpack": "^*",
 		"@types/node": "^15.14.3",
 		"@types/react": "^17.0.15",
 		"@typescript-eslint/eslint-plugin": "^4.28.5",
 		"@typescript-eslint/parser": "^4.28.5",
+		"classnames": "*",
 		"eslint": "^7.31.0",
 		"eslint-config-next": "11.0.0",
-		"next": "^11.0.1-canary.4",
-		"stylelint": "^13.13.1",
-		"stylelint-config-standard": "^22.0.0",
-		"stylelint-order": "^4.1.0",
-		"stylelint-order-config-standard": "^0.1.3",
+		"next": "12.0.1",
+		"postcss": "*",
+		"stylelint": "^14.0.0",
+		"stylelint-config-standard": "*",
+		"stylelint-order": "*",
 		"typescript": "^4.3.5"
 	}
 }
