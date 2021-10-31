@@ -1,0 +1,29 @@
+.footer {
+	display: grid;
+	grid-gap: 10px;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+	background: var(--primary);
+	color: var(--white);
+	font-size: 16px;
+}
+
+.footer a:hover {
+	color: var(--grey);
+}
+
+@media (min-width: 1500px) {
+	.footer {
+		grid-template-columns: auto 1fr 1fr;
+		grid-gap: 40px;
+		justify-content: flex-start;
+		padding: 25px 30px;
+		text-align: right;
+		direction: rtl;
+	}
+
+	.footer > span {
+		text-align: left;
+	}
+}
