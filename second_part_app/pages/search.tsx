@@ -4,11 +4,11 @@ import React from 'react'
 import { MenuItem } from '../interfaces/menu.interface'
 import { withLayout } from '../layout/Layout'
 
-const Home = ({ menu }: HomeProps): JSX.Element => {
-	return <>Home</>
+const Search = ({ menu }: HomeProps): JSX.Element => {
+	return <>Search</>
 }
 
-export default withLayout(Home)
+export default withLayout(Search)
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0
