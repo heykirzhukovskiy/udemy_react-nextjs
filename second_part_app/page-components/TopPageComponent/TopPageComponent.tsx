@@ -1,8 +1,7 @@
-import { TopPageComponentProps } from './TopPageComponent.props'
-import styles from './TopPageComponent.module.css'
-import cn from 'classnames'
 import { HHData, Htag, Tag } from '../../components'
 import { TopLevelCategory } from '../../interfaces/page.interface'
+import styles from './TopPageComponent.module.css'
+import { TopPageComponentProps } from './TopPageComponent.props'
 
 export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
 	return (
