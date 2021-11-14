@@ -1,11 +1,16 @@
 import axios from 'axios'
 import { GetStaticProps } from 'next'
 import React from 'react'
+import { TextArea } from '../components'
 import { MenuItem } from '../interfaces/menu.interface'
 import { withLayout } from '../layout/Layout'
 
 const Home = ({ menu }: HomeProps): JSX.Element => {
-	return <>Home</>
+	return (
+		<>
+			<TextArea placeholder='Hello' />
+		</>
+	)
 }
 
 export default withLayout(Home)

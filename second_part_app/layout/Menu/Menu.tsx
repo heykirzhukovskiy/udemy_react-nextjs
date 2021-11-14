@@ -8,7 +8,7 @@ import { PageItem } from '../../interfaces/menu.interface'
 import styles from './Menu.module.css'
 
 export const Menu = (): JSX.Element => {
-	const { menu, setMenu, firstCategory } = useContext(AppContext)
+	const { menu, setMenu } = useContext(AppContext)
 	const { asPath } = useRouter()
 
 	const openSecondMenu = (secondCategory: string) => {
