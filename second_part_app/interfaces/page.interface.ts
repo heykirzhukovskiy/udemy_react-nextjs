@@ -24,7 +24,7 @@ export interface TopPageModel {
 	__v: number
 	_id: string
 	addresses: any[]
-	advantages: TopPageAdvantage[]
+	advantages?: TopPageAdvantage[]
 	alias: string
 	category: string
 	categoryOn: string
@@ -35,7 +35,7 @@ export interface TopPageModel {
 	metaTitle: string
 	qas: any[]
 	secondCategory: string
-	seoText: string
+	seoText?: string
 	tags: string[]
 	tagsTitle: string
 	title: string

@@ -17,6 +17,7 @@
 
 .body {
 	grid-area: body;
+	padding: 15px;
 }
 
 .footer {
@@ -37,5 +38,9 @@
 
 	.header {
 		display: none;
+	}
+
+	.body {
+		padding: 0;
 	}
 }

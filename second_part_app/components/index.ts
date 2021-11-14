@@ -1,3 +1,4 @@
+export * from './Advantages'
 export * from './Button'
 export * from './Card'
 export * from './HhData'

@@ -14,10 +14,10 @@ export const Menu = (): JSX.Element => {
 	const openSecondMenu = (secondCategory: string) => {
 		setMenu &&
 			setMenu(
-				menu.map(m => {
-					if (m._id.secondCategory === secondCategory) m.isOpen = !m.isOpen
-					return m
-				}),
+				menu.map(m => ({
+					...m,
+					isOpen: m._id.secondCategory === secondCategory,
+				})),
 			)
 	}
 

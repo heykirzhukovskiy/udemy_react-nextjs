@@ -1,0 +1,45 @@
+.advantages {
+	display: grid;
+	gap: 30px;
+	padding: 30px 0;
+}
+
+.advantage {
+	display: grid;
+	grid-template-columns: 50px auto;
+	justify-items: center;
+	align-items: center;
+	gap: 10px 40px;
+}
+
+.title {
+	justify-self: flex-start;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 27px;
+}
+
+.checkBox {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background: var(--green-light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.vline {
+	box-sizing: border-box;
+	width: 1px;
+	height: 80%;
+	padding: 8px 0;
+	border: none;
+	color: #d2d2d2;
+	background-color: #d2d2d2;
+}
+
+.description {
+	font-size: 18px;
+	line-height: 29px;
+}
