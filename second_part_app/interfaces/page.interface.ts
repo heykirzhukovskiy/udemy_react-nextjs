@@ -7,8 +7,8 @@ export enum TopLevelCategory {
 
 export interface TopPageAdvantage {
 	_id: string
-	title: string
 	description: string
+	title: string
 }
 
 export interface HhData {
@@ -21,23 +21,23 @@ export interface HhData {
 }
 
 export interface TopPageModel {
-	tags: string[]
-	_id: string
-	secondCategory: string
-	alias: string
-	title: string
-	category: string
-	seoText: string
-	tagsTitle: string
-	metaTitle: string
-	metaDescription: string
-	firstCategory: TopLevelCategory
-	advantages: TopPageAdvantage[]
-	createdAt: Date
-	updatedAt: Date
 	__v: number
-	hh: HhData
-	qas: any[]
+	_id: string
 	addresses: any[]
+	advantages: TopPageAdvantage[]
+	alias: string
+	category: string
 	categoryOn: string
+	createdAt: Date
+	firstCategory: TopLevelCategory
+	hh?: HhData
+	metaDescription: string
+	metaTitle: string
+	qas: any[]
+	secondCategory: string
+	seoText: string
+	tags: string[]
+	tagsTitle: string
+	title: string
+	updatedAt: Date
 }

@@ -22,22 +22,26 @@ export const Menu = (): JSX.Element => {
 	}
 
 	const buildFirstLevel = () =>
-		firstLevelMenu.map(menu => (
-			<div key={menu.route}>
-				<Link href={`/${menu.route}`}>
-					<a
-						className={cn(styles.firstLevel, {
-							[styles.firstLevelActive]: menu.id === firstCategory,
-						})}
-					>
-						{menu.icon} <span>{menu.name}</span>
-					</a>
-				</Link>
-				<ul className={cn(styles.firstLevelSub, { [styles.firstLevelSubOpen]: menu.id === firstCategory })}>
-					{menu.id === firstCategory && buildSecondLevel(menu.route)}
-				</ul>
-			</div>
-		))
+		firstLevelMenu.map(menu => {
+			const isActive = asPath.includes(menu.route)
+
+			return (
+				<div key={menu.route}>
+					<Link href={`/${menu.route}`}>
+						<a
+							className={cn(styles.firstLevel, {
+								[styles.firstLevelActive]: isActive,
+							})}
+						>
+							{menu.icon} <span>{menu.name}</span>
+						</a>
+					</Link>
+					<ul className={cn(styles.firstLevelSub, { [styles.firstLevelSubOpen]: isActive })}>
+						{buildSecondLevel(menu.route)}
+					</ul>
+				</div>
+			)
+		})
 
 	const buildSecondLevel = (route: string) =>
 		menu.map(menuItem => {

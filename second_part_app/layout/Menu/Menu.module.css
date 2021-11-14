@@ -27,7 +27,7 @@
 
 .firstLevelSub {
 	position: relative;
-	height: 0px;
+	height: 0;
 	overflow: hidden;
 	margin: 0;
 	transition: all 0.3s;
@@ -43,7 +43,7 @@
 	position: absolute;
 	left: 12px;
 	display: block;
-	content: '';
+	content: none;
 	width: 1px;
 	height: 100%;
 	background: #dfdfdf;
