@@ -34,7 +34,8 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 					<Advantages advantages={page.advantages} />
 				</section>
 			)}
-			<section className={styles.seoSection}>{page.seoText && page.seoText}</section>
+			{page.seoText && <section className={styles.seoSection} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
+
 			<section className={styles.skillsSection}>
 				<Htag tag='h2'>Получаемые навыки</Htag>
 				<div className={styles.skills}>
