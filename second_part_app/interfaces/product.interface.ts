@@ -21,6 +21,7 @@ export interface ProductModel {
 	createdAt: Date
 	credit: number
 	description: string
+	disAdvantages: string
 	html: string
 	image: string
 	initialRating: number

@@ -1,18 +1,155 @@
-.p {
-  margin: 0;
+.card {
+	padding: 30px;
+	display: grid;
+	gap: 20px;
 }
 
-.s {
-  line-height: 24px;
-  font-size: 14px;
+.hr {
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: var(--grey);
+	color: var(--grey);
 }
 
-.m {
-  line-height: 24px;
-  font-size: 16px;
+.top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.l {
-  line-height: 29px;
-  font-size: 18px;
+.leftTop {
+	display: grid;
+	grid-template-columns: 70px auto;
+	gap: 30px;
+}
+
+.logo {
+	border-radius: 5px;
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+.categories {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: flex-start;
+	gap: 5px;
+}
+
+.rightTop {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-content: flex-end;
+	gap: 40px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.rightTop p {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: 300;
+}
+
+.price {
+	display: flex;
+	align-items: center;
+}
+
+.price p {
+	margin-left: 5px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 700;
+}
+
+.credit span {
+	font-size: 12px;
+}
+
+.middle {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 20px;
+}
+
+.description {
+	font-weight: 400;
+}
+
+.characteristicsWrap {
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+.characteristics {
+	display: grid;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.characteristics hr {
+	width: 100%;
+	padding: 0;
+	margin: 0 15px;
+	border: none;
+	border-top: 1px dashed #c4c4c4;
+}
+
+.characteristic {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	white-space: nowrap;
+}
+
+.characteristic span:first-child {
+	font-weight: 700;
+}
+
+.characteristic span:last-child {
+	font-weight: 500;
+}
+
+.advantages,
+.downsides {
+	position: relative;
+	padding-left: 20px;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.advantages h3,
+.downsides h3 {
+	margin-bottom: 5px;
+}
+
+.advantages::before,
+.downsides::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 3px;
+	height: 100%;
+	border-radius: 2px;
+}
+
+.advantages::before {
+	background-color: #1dc37e;
+}
+
+.downsides::before {
+	background-color: var(--red);
+}
+
+.bottom {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: flex-start;
+	gap: 20px;
 }
