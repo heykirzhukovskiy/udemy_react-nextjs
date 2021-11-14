@@ -13,24 +13,24 @@ export interface ProductReviewModel {
 }
 
 export interface ProductModel {
+	__v: number
 	_id: string
+	advantages: string
 	categories: string[]
+	characteristics: ProductCharacteristic[]
+	createdAt: Date
+	credit: number
+	description: string
+	html: string
+	image: string
+	initialRating: number
+	link: string
+	oldPrice: number
+	price: number
+	reviewAvg?: number
+	reviewCount: number
+	reviews: ProductReviewModel[]
 	tags: string[]
 	title: string
-	image: string
-	description: string
-	link: string
-	price: number
-	credit: number
-	oldPrice: number
-	characteristics: ProductCharacteristic[]
-	advantages: string
-	initialRating: number
-	createdAt: Date
 	updatedAt: Date
-	__v: number
-	html: string
-	reviews: ProductReviewModel[]
-	reviewCount: number
-	reviewAvg?: number
 }

@@ -1,6 +1,6 @@
 import { RatingProps } from './Rating.props'
 import styles from './Rating.module.css'
-import cn from 'classnames'
+import classNames from 'classnames'
 import StarIcon from './star.svg'
 import { useEffect, useState, KeyboardEvent } from 'react'
 
@@ -15,7 +15,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
 		const updatedArray = ratingArray.map((_: JSX.Element, i: number) => {
 			return (
 				<span
-					className={cn(styles.star, { [styles.filled]: i < currRating, [styles.editable]: isEditable })}
+					className={classNames(styles.star, { [styles.filled]: i < currRating, [styles.editable]: isEditable })}
 					onMouseEnter={() => changeDisplay(i + 1)}
 					onMouseLeave={() => changeDisplay(rating)}
 					onClick={() => onClickHandler(i + 1)}

@@ -1,5 +1,5 @@
-import { useReducer } from 'react'
-import { HHData, Htag, Sort, Tag } from '../../components'
+import { useEffect, useReducer } from 'react'
+import { HHData, Htag, Product, Sort, Tag } from '../../components'
 import { Advantages } from '../../components/Advantages/Advantages'
 import { SortEnum } from '../../components/Sort/Sort.props'
 import { TopLevelCategory } from '../../interfaces/page.interface'
@@ -28,7 +28,7 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 				<Sort sort={sort} setSort={handleSort} isAscending={isAscending} />
 			</section>
 			<section className={styles.productsSection}>
-				{sortedProducts && sortedProducts.map(p => <div key={p._id}>{p.title}</div>)}
+				{sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} />)}
 			</section>
 			{page.hh && (
 				<section className={styles.hhSection}>

@@ -1,10 +1,10 @@
-import cn from 'classnames'
+import classNames from 'classnames'
 import styles from './Footer.module.css'
 import { FooterProps } from './Footer.props'
 import { format } from 'date-fns'
 
 export const Footer = ({ className, ...props }: FooterProps): JSX.Element => (
-	<footer className={cn(className, styles.footer)} {...props}>
+	<footer className={classNames(className, styles.footer)} {...props}>
 		<a href='#' target='_blank'>
 			Пользовательское соглашение
 		</a>

@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import classNames from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext } from 'react'
@@ -29,14 +29,14 @@ export const Menu = (): JSX.Element => {
 				<div key={menu.route}>
 					<Link href={`/${menu.route}`}>
 						<a
-							className={cn(styles.firstLevel, {
+							className={classNames(styles.firstLevel, {
 								[styles.firstLevelActive]: isActive,
 							})}
 						>
 							{menu.icon} <span>{menu.name}</span>
 						</a>
 					</Link>
-					<ul className={cn(styles.firstLevelSub, { [styles.firstLevelSubOpen]: isActive })}>
+					<ul className={classNames(styles.firstLevelSub, { [styles.firstLevelSubOpen]: isActive })}>
 						{buildSecondLevel(menu.route)}
 					</ul>
 				</div>
@@ -49,9 +49,9 @@ export const Menu = (): JSX.Element => {
 				menuItem.isOpen = true
 			}
 			return (
-				<li key={menuItem._id.secondCategory} className={cn(styles.secondLevel)}>
+				<li key={menuItem._id.secondCategory} className={classNames(styles.secondLevel)}>
 					<span onClick={() => openSecondMenu(menuItem._id.secondCategory)}>{menuItem._id.secondCategory}</span>
-					<ul className={cn(styles.secondLevelSub, { [styles.secondLevelSubOpen]: menuItem.isOpen })}>
+					<ul className={classNames(styles.secondLevelSub, { [styles.secondLevelSubOpen]: menuItem.isOpen })}>
 						{buildThirdLevel(menuItem.pages, route)}
 					</ul>
 				</li>
@@ -62,7 +62,7 @@ export const Menu = (): JSX.Element => {
 		pages.map(page => (
 			<li
 				key={page._id}
-				className={cn(styles.thirdLevel, {
+				className={classNames(styles.thirdLevel, {
 					[styles.thirdLevelActive]: `/${route}/${page.alias}` === asPath,
 				})}
 			>

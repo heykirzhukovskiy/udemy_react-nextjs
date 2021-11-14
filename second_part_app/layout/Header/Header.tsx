@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import classNames from 'classnames'
 import styles from './Header.module.css'
 import { HeaderProps } from './Header.props'
 
