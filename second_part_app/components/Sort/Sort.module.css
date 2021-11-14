@@ -1,0 +1,84 @@
+.sort {
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: flex-end;
+	gap: 40px;
+}
+
+.sortItem {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 8px;
+	align-items: center;
+	font-size: 16px;
+	line-height: 22px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.active {
+	color: var(--primary);
+}
+
+.sortIcon {
+	display: flex;
+	position: relative;
+	width: 0px;
+	height: 3px;
+	border-radius: 2px;
+	background-color: var(--primary);
+	justify-content: flex-end;
+	align-content: center;
+	transition: all 0.3s;
+}
+
+.sortIcon::after,
+.sortIcon::before {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 0px;
+	border-radius: 2px;
+	background-color: var(--primary);
+	transition: all 0.3s;
+}
+
+.sortIcon::after {
+	top: -5px;
+	right: 0;
+}
+
+.sortIcon::before {
+	top: 5px;
+	right: 0;
+}
+
+.desc,
+.asc {
+	width: 14px;
+}
+
+.desc::after {
+	top: -5px;
+	right: 0;
+	width: 20px;
+}
+
+.desc::before {
+	top: 5px;
+	right: 0;
+	width: 8px;
+}
+
+.asc::after {
+	top: -5px;
+	right: 0;
+	width: 8px;
+}
+
+.asc::before {
+	top: 5px;
+	right: 0;
+	width: 20px;
+}
