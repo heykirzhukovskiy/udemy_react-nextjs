@@ -13,7 +13,6 @@
 
 .productsSection {
 	display: grid;
-	gap: 20px;
 	margin-bottom: 50px;
 }
 
@@ -30,14 +29,8 @@
 	gap: 20px;
 }
 
-.advantagesSection {
-}
-
 .seoSection {
 	margin-bottom: 30px;
-}
-
-.skillsSection {
 }
 
 .skillsSection h2 {
@@ -45,8 +38,13 @@
 }
 
 .skills {
-	display: grid;
-	grid-auto-flow: column;
-	justify-content: flex-start;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 20px;
+}
+
+@media screen and (max-width: 510px) {
+	.title {
+		grid-template-columns: auto 1fr;
+	}
 }

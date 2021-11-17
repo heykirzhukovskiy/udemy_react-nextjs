@@ -1,10 +1,16 @@
 .card {
+	margin-top: 30px;
 	padding: 30px;
 	display: grid;
 	gap: 20px;
 }
 
+.card:first-of-type {
+	margin-top: 0;
+}
+
 .hr {
+	margin: 0;
 	width: 100%;
 	height: 1px;
 	border: none;
@@ -18,7 +24,7 @@
 	justify-content: space-between;
 }
 
-.leftTop {
+.topTitle {
 	display: grid;
 	grid-template-columns: 70px auto;
 	gap: 30px;
@@ -33,13 +39,12 @@
 }
 
 .categories {
-	display: grid;
-	grid-auto-flow: column;
-	justify-content: flex-start;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 5px;
 }
 
-.rightTop {
+.topPrice {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	justify-content: flex-end;
@@ -48,7 +53,7 @@
 	font-weight: 400;
 }
 
-.rightTop p {
+.topPrice p {
 	font-size: 14px;
 	line-height: 19px;
 	font-weight: 300;
@@ -152,4 +157,80 @@
 	grid-auto-flow: column;
 	justify-content: flex-start;
 	gap: 20px;
+}
+
+.reviews {
+	padding: 30px;
+	max-height: auto;
+	overflow: hidden;
+	transition: all 0.3s;
+	margin-top: -30px;
+	display: grid;
+	gap: 20px;
+}
+
+.closed {
+	padding: 0px;
+	max-height: 0px;
+}
+
+@media screen and (max-width: 1400px) {
+	.topPrice {
+		gap: 20px;
+	}
+}
+
+@media screen and (max-width: 1330px) {
+	.top {
+		display: grid;
+		gap: 20px;
+	}
+
+	.topPrice {
+		justify-content: flex-start;
+	}
+
+	.middle {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.card {
+		padding: 10px;
+	}
+
+	.topTitle {
+		grid-template-columns: auto;
+	}
+
+	.topPrice {
+		grid-template-columns: 1fr;
+	}
+
+	.topPrice > div {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.middle {
+		grid-template-columns: 1fr;
+	}
+	.bottom {
+		grid-auto-flow: row;
+		gap: 10px;
+	}
+
+	.reviews {
+		padding: 10px;
+		margin-top: -10px;
+		gap: 10px;
+	}
+
+	.closed {
+		padding: 0px;
+		max-height: 0px;
+	}
 }

@@ -1,11 +1,16 @@
-.filled svg {
+.filled {
 	fill: var(--primary);
 }
 
-.star svg {
-	margin-right: 5px;
+.rating {
+	display: flex;
+	gap: 5px;
 }
 
 .editable {
 	cursor: pointer;
+}
+
+.starWrap {
+	display: flex;
 }

@@ -1,0 +1,64 @@
+.review {
+	display: grid;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+}
+
+.reviewer {
+	font-size: 14px;
+	font-weight: 700;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.description {
+	font-size: 14px;
+}
+
+.hr {
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	background-color: var(--grey);
+	border: none;
+	color: var(--grey);
+}
+
+@media screen and (max-width: 600px) {
+	.head {
+		display: grid;
+		justify-items: flex-start;
+		gap: 10px;
+	}
+
+	.reviewer {
+		display: block;
+	}
+
+	.info {
+		flex-direction: row-reverse;
+	}
+}

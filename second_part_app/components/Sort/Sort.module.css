@@ -57,6 +57,7 @@
 .desc,
 .asc {
 	width: 14px;
+	margin-left: 6px;
 }
 
 .desc::after {
