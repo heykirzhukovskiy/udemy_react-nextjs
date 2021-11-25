@@ -1,6 +1,6 @@
 import { ProductProps } from './Product.props'
 import styles from './Product.module.css'
-import { Button, Card, Htag, P, ProductReview as ProductReviews, Review, ReviewForm, Tag } from '..'
+import { Button, Card, Htag, P, Review, ReviewForm, Tag } from '..'
 import { Rating } from '../Rating'
 import { declOfNumber, priceRU } from '../../helpers/helpers'
 import Image from 'next/image'
@@ -28,7 +28,7 @@ export const Product = ({
 		...props
 	},
 }: ProductProps): JSX.Element => {
-	console.log('ProductProps', props)
+	console.warn('Неиспользуемые пропсы в Product:', props)
 	const [isReviewOpened, toggleReviewOpened] = useState<boolean>(false)
 	const handleReviewOpened = () => toggleReviewOpened(preview => !preview)
 

@@ -6,16 +6,7 @@ import { firstLevelMenu } from '../../helpers/helpers'
 import { MenuItem } from '../../interfaces/menu.interface'
 import { withLayout } from '../../layout/Layout'
 
-const Type = ({ firstCategory }: TypeProps): JSX.Element => {
-	return (
-		<ul>
-			{/* {menu.pages.map(page => (
-				<li>{page}</li>
-			))} */}
-			{firstCategory}
-		</ul>
-	)
-}
+const Type = ({ firstCategory }: TypeProps): JSX.Element => <>{firstCategory}</>
 
 export default withLayout(Type)
 

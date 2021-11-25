@@ -12,10 +12,11 @@
 	"dependencies": {
 		"axios": "^0.24.0",
 		"classnames": "^2.3.1",
-		"date-fns": "^2.25.0",
+		"date-fns": "^2.26.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"react": "17.0.2",
-		"react-dom": "17.0.2"
+		"react-dom": "17.0.2",
+		"react-hook-form": "^7.20.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0-0",
@@ -24,13 +25,13 @@
 		"@types/react": "^17.0.15",
 		"@typescript-eslint/eslint-plugin": "^4.28.5",
 		"@typescript-eslint/parser": "^4.28.5",
-		"eslint": "^7.31.0",
-		"eslint-config-next": "11.0.0",
-		"next": "12.0.1",
+		"eslint": "^8.3.0",
+		"eslint-config-next": "^12.0.4",
+		"next": "^12.0.4",
 		"postcss": "*",
-		"stylelint": "^14.0.0",
-		"stylelint-config-standard": "*",
+		"stylelint": "^14.0.1",
+		"stylelint-config-standard": "^24.0.0",
 		"stylelint-order": "*",
-		"typescript": "^4.3.5"
+		"typescript": "^4.5.2"
 	}
 }

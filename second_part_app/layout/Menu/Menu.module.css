@@ -37,6 +37,7 @@
 	font-weight: 300;
 	line-height: 16px;
 	color: #787d85;
+	transition: all 0.3s;
 }
 
 .firstLevelSub::before {
@@ -68,6 +69,7 @@
 	text-transform: none;
 	list-style: none;
 	padding: 0;
+	transition: all 0.3s;
 }
 
 .secondLevelSubOpen {

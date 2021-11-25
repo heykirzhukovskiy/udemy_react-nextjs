@@ -6,7 +6,7 @@ import UserIcon from './user.svg'
 export const Review = ({
 	review: { name, title, description, rating, createdAt, ...props },
 }: ReviewProps): JSX.Element => {
-	console.log('ReviewProps', props)
+	console.warn('Неиспользуемые пропсы в Review:', props)
 
 	return (
 		<>
