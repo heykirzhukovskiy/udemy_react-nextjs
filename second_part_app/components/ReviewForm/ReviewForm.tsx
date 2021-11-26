@@ -40,8 +40,9 @@ export const ReviewForm = ({ ...props }: ReviewFormProps): JSX.Element => {
 				<Controller
 					control={control}
 					name='rating'
+					rules={{ required: { value: true, message: 'Helloooo' } }}
 					render={({ field: { value, onChange, ...field } }) => (
-						<Rating rating={value} isEditable setRating={onChange} {...field} />
+						<Rating error={errors.rating} rating={value} isEditable setRating={onChange} {...field} />
 					)}
 				/>
 			</div>
