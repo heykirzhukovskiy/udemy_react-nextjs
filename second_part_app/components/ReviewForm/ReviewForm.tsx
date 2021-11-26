@@ -17,23 +17,22 @@ export const ReviewForm = ({ ...props }: ReviewFormProps): JSX.Element => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 			<fieldset className={styles.title}>
-				<Controller
+				{/* <Controller
 					control={control}
 					name='name'
-					render={({ field }) => <Input placeholder='Имя' className={styles.input} {...field} />}
-				/>
-				<Controller
-					control={control}
-					name='title'
-					render={({ field }) => <Input placeholder='Заголовок отзыва' className={styles.input} {...field} />}
-				/>
+					render={({ field }) => }
+				/> */}
+				<Input placeholder='Имя' className={styles.input} {...register('name')} />
+				<Input placeholder='Заголовок отзыва' className={styles.input} {...register('title')} />
 			</fieldset>
 			<div className={styles.ratingWrap}>
 				<span>Оценка:</span>
 				<Controller
 					control={control}
 					name='rating'
-					render={({ field: { value, onChange } }) => <Rating rating={value} isEditable setRating={onChange} />}
+					render={({ field: { value, onChange, ...field } }) => (
+						<Rating rating={value} isEditable setRating={onChange} {...field} />
+					)}
 				/>
 			</div>
 			<Controller
