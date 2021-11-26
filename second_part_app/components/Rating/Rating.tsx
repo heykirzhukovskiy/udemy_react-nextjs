@@ -6,7 +6,7 @@ import { useEffect, useState, KeyboardEvent, forwardRef, ForwardedRef } from 're
 
 export const Rating = forwardRef(
 	(
-		{ isEditable = false, rating, setRating, ...props }: RatingProps,
+		{ isEditable = false, rating, setRating, error, ...props }: RatingProps,
 		ref: ForwardedRef<HTMLDivElement>,
 	): JSX.Element => {
 		const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
@@ -21,7 +21,11 @@ export const Rating = forwardRef(
 					key={i + 'rateStar'}
 					tabIndex={isEditable ? 0 : -1}
 					onKeyDown={(e: KeyboardEvent<SVGElement>) => isEditable && handleSpace(i + 1, e)}
-					className={classNames(styles.star, { [styles.filled]: i < currRating, [styles.editable]: isEditable })}
+					className={classNames(styles.star, {
+						[styles.filled]: i < currRating,
+						[styles.editable]: isEditable,
+						[styles.error]: !!error,
+					})}
 					onMouseEnter={() => changeDisplay(i + 1)}
 					onMouseLeave={() => changeDisplay(rating)}
 					onClick={() => onClickHandler(i + 1)}
@@ -56,12 +60,13 @@ export const Rating = forwardRef(
 		}
 
 		return (
-			<div className={styles.rating} {...props} ref={ref}>
+			<div className={styles.rating} ref={ref} {...props}>
 				{ratingArray.map((r, i) => (
 					<div className={styles.starWrap} key={i}>
 						{r}
 					</div>
 				))}
+				{error && <span className={styles.errorMessage}>{error.message}</span>}
 			</div>
 		)
 	},
