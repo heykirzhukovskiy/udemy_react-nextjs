@@ -8,7 +8,12 @@ import { ReviewFormProps } from './ReviewForm.props'
 export const ReviewForm = ({ ...props }: ReviewFormProps): JSX.Element => {
 	console.warn('Неиспользуемые пропсы в ReviewForm:', props)
 
-	const { register, control, handleSubmit } = useForm<IReviewForm>()
+	const {
+		register,
+		control,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<IReviewForm>()
 
 	const onSubmit = (data: IReviewForm) => {
 		console.log(data)
@@ -17,13 +22,18 @@ export const ReviewForm = ({ ...props }: ReviewFormProps): JSX.Element => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 			<fieldset className={styles.title}>
-				{/* <Controller
-					control={control}
-					name='name'
-					render={({ field }) => }
-				/> */}
-				<Input placeholder='Имя' className={styles.input} {...register('name')} />
-				<Input placeholder='Заголовок отзыва' className={styles.input} {...register('title')} />
+				<Input
+					placeholder='Имя'
+					className={styles.input}
+					error={errors.name}
+					{...register('name', { required: { value: true, message: 'Fill me!' } })}
+				/>
+				<Input
+					error={errors.title}
+					placeholder='Заголовок отзыва'
+					className={styles.input}
+					{...register('title', { required: { value: true, message: 'Fill me too!' } })}
+				/>
 			</fieldset>
 			<div className={styles.ratingWrap}>
 				<span>Оценка:</span>
@@ -35,10 +45,11 @@ export const ReviewForm = ({ ...props }: ReviewFormProps): JSX.Element => {
 					)}
 				/>
 			</div>
-			<Controller
-				control={control}
-				name='description'
-				render={({ field }) => <TextArea placeholder='Текст отзыва' className={styles.fullWidth} {...field} />}
+			<TextArea
+				error={errors.description}
+				placeholder='Текст отзыва'
+				className={styles.fullWidth}
+				{...register('description', { required: { value: true, message: 'And meeeeeeee' } })}
 			/>
 			<div className={classNames(styles.action, styles.fullWidth)}>
 				<Button appearance='primary' type='submit'>

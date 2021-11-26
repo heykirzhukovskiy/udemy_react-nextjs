@@ -4,7 +4,16 @@ import styles from './Input.module.css'
 import { InputProps } from './Input.props'
 
 export const Input = forwardRef(
-	({ className, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => (
-		<input className={classNames(className, styles.input)} ref={ref} {...props} />
+	({ className, error, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => (
+		<div className={classNames(className, styles.inputWrapper)}>
+			<input
+				className={classNames(styles.input, {
+					[styles.error]: !!error,
+				})}
+				ref={ref}
+				{...props}
+			/>
+			{error && <span className={styles.errorMessage}>{error.message}</span>}
+		</div>
 	),
 )

@@ -4,7 +4,10 @@ import styles from './TextArea.module.css'
 import { TextAreaProps } from './TextArea.props'
 
 export const TextArea = forwardRef(
-	({ className, rows = 3, ...props }: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => (
-		<textarea rows={rows} className={classNames(className, styles.textarea)} ref={ref} {...props} />
+	({ className, error, rows = 3, ...props }: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => (
+		<div className={classNames(className, styles.textareaWrap)}>
+			<textarea rows={rows} className={classNames(styles.textarea, { [styles.error]: !!error })} ref={ref} {...props} />
+			{error && <span className={styles.errorMessage}>{error.message}</span>}
+		</div>
 	),
 )
