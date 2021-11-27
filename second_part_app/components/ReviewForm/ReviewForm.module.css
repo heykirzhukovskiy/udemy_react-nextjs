@@ -42,16 +42,23 @@
 	font-size: 14px;
 }
 
-.success {
+.responseRes {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--green-light);
 	padding: 20px;
 	border-radius: 5px;
 }
 
-.successTitle {
+.success {
+	background-color: var(--green-light);
+}
+
+.error {
+	background-color: rgb(225 0 0 / 30%);
+}
+
+.responseResTitle {
 	font-weight: 700;
 }
 
@@ -65,6 +72,8 @@
 	padding: 13px;
 	border-radius: 3px;
 	cursor: pointer;
+	background-color: transparent;
+	transition: all 0.3s;
 }
 
 .closeIcon:hover {
@@ -78,7 +87,6 @@
 	display: block;
 	width: 3px;
 	height: 12px;
-	background-color: var(--green);
 }
 
 .closeIcon::after {
@@ -87,6 +95,16 @@
 
 .closeIcon::before {
 	transform: rotate(-45deg);
+}
+
+.success .closeIcon::after,
+.success .closeIcon::before {
+	background-color: var(--green);
+}
+
+.error .closeIcon::after,
+.error .closeIcon::before {
+	background-color: var(--red);
 }
 
 @media screen and (max-width: 1330px) {
