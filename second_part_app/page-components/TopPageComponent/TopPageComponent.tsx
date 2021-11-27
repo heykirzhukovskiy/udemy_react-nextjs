@@ -14,6 +14,10 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 		isAscending: false,
 	})
 
+	useEffect(() => {
+		dispatchSort({ type: 'reset', initialState: products })
+	}, [products])
+
 	const handleSort = (sort: SortEnum) => dispatchSort({ type: sort })
 
 	return (
