@@ -1,7 +1,8 @@
 import { useEffect, useReducer } from 'react'
-import { HHData, Htag, Product, Sort, Tag } from '../../components'
+import { HHData, Htag, Product, Sort, Tag, Up } from '../../components'
 import { Advantages } from '../../components/Advantages/Advantages'
 import { SortEnum } from '../../components/Sort/Sort.props'
+import { useScrollY } from '../../hooks/useScrollY'
 import { TopLevelCategory } from '../../interfaces/page.interface'
 import { sortReducer } from './sort.reducer'
 import styles from './TopPageComponent.module.css'
@@ -63,6 +64,8 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 					))}
 				</div>
 			</section>
+
+			<Up />
 		</div>
 	)
 }

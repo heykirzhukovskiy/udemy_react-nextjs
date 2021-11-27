@@ -5,28 +5,24 @@ import UserIcon from './user.svg'
 
 export const Review = ({
 	review: { name, title, description, rating, createdAt, ...props },
-}: ReviewProps): JSX.Element => {
-	console.warn('Неиспользуемые пропсы в Review:', props)
-
-	return (
-		<>
-			<div className={styles.review}>
-				<div className={styles.head}>
-					<div className={styles.title}>
-						<UserIcon className={styles.icon} />
-						<span>
-							<P className={styles.reviewer}>{name}:</P>
-							{title}
-						</span>
-					</div>
-					<div className={styles.info}>
-						<span>{new Date(createdAt).toLocaleDateString()}</span>
-						<Rating rating={rating} />
-					</div>
+}: ReviewProps): JSX.Element => (
+	<>
+		<div className={styles.review}>
+			<div className={styles.head}>
+				<div className={styles.title}>
+					<UserIcon className={styles.icon} />
+					<span>
+						<P className={styles.reviewer}>{name}:</P>
+						{title}
+					</span>
 				</div>
-				<P className={styles.description}>{description}</P>
+				<div className={styles.info}>
+					<span>{new Date(createdAt).toLocaleDateString()}</span>
+					<Rating rating={rating} />
+				</div>
 			</div>
-			<hr className={styles.hr} />
-		</>
-	)
-}
+			<P className={styles.description}>{description}</P>
+		</div>
+		<hr className={styles.hr} />
+	</>
+)

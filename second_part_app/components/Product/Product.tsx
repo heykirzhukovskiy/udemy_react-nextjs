@@ -34,7 +34,6 @@ export const Product = motion(
 			}: ProductProps,
 			ref: ForwardedRef<HTMLDivElement>,
 		): JSX.Element => {
-			console.warn('Неиспользуемые пропсы в Product:', props)
 			const [isReviewOpened, toggleReviewOpened] = useState<boolean>(false)
 			const handleReviewOpened = () => toggleReviewOpened(preview => !preview)
 			const reviewRef = useRef<HTMLDivElement>(null)

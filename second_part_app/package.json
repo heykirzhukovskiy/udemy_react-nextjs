@@ -6,6 +6,7 @@
 		"debug": "NODE_OPTIONS='--inspect' next dev",
 		"build": "next build",
 		"start": "next start",
+		"test": "yarn jest",
 		"lint": "next lint",
 		"stylelint": "stylelint \"**/*.css\" --fix"
 	},
@@ -15,6 +16,7 @@
 		"date-fns": "^2.26.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"framer-motion": "^5.3.3",
+		"jest": "^27.3.1",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"react-hook-form": "^7.20.2"
@@ -22,6 +24,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.0.0-0",
 		"@svgr/webpack": "^*",
+		"@types/jest": "^27.0.3",
 		"@types/node": "^15.14.3",
 		"@types/react": "^17.0.15",
 		"@typescript-eslint/eslint-plugin": "^4.28.5",
