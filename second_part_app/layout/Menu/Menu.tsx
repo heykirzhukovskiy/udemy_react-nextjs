@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext } from 'react'
@@ -10,6 +11,33 @@ import styles from './Menu.module.css'
 export const Menu = (): JSX.Element => {
 	const { menu, setMenu } = useContext(AppContext)
 	const { asPath } = useRouter()
+
+	const secondLevelAnim = {
+		visible: {
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.1,
+			},
+			height: 'auto',
+		},
+		hidden: {
+			transition: {
+				when: 'afterChildren',
+			},
+			height: 0,
+		},
+	}
+
+	const thirdLevelAnim = {
+		visible: {
+			height: 'auto',
+			opacity: 1,
+		},
+		hidden: {
+			opacity: 0,
+			height: 0,
+		},
+	}
 
 	const openSecondMenu = (secondCategory: string) => {
 		setMenu &&
@@ -51,16 +79,23 @@ export const Menu = (): JSX.Element => {
 			return (
 				<li key={menuItem._id.secondCategory} className={classNames(styles.secondLevel)}>
 					<span onClick={() => openSecondMenu(menuItem._id.secondCategory)}>{menuItem._id.secondCategory}</span>
-					<ul className={classNames(styles.secondLevelSub, { [styles.secondLevelSubOpen]: menuItem.isOpen })}>
+					<motion.ul
+						layout
+						variants={secondLevelAnim}
+						initial={menuItem.isOpen ? 'visible' : 'hidden'}
+						animate={menuItem.isOpen ? 'visible' : 'hidden'}
+						className={classNames(styles.secondLevelSub, { [styles.secondLevelSubOpen]: menuItem.isOpen })}
+					>
 						{buildThirdLevel(menuItem.pages, route)}
-					</ul>
+					</motion.ul>
 				</li>
 			)
 		})
 
 	const buildThirdLevel = (pages: PageItem[], route: string) =>
 		pages.map(page => (
-			<li
+			<motion.li
+				variants={thirdLevelAnim}
 				key={page._id}
 				className={classNames(styles.thirdLevel, {
 					[styles.thirdLevelActive]: `/${route}/${page.alias}` === asPath,
@@ -69,7 +104,7 @@ export const Menu = (): JSX.Element => {
 				<Link href={`/${route}/${page.alias}`}>
 					<a>{page.category}</a>
 				</Link>
-			</li>
+			</motion.li>
 		))
 
 	return <nav className={styles.menu}>{buildFirstLevel()}</nav>
