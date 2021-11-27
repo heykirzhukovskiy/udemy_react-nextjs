@@ -75,6 +75,10 @@
 	font-size: 12px;
 }
 
+.rateTitle a {
+	color: var(--primary);
+}
+
 .middle {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

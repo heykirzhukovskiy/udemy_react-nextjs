@@ -5,7 +5,7 @@ import { Rating } from '../Rating'
 import { declOfNumber, priceRU } from '../../helpers/helpers'
 import Image from 'next/image'
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export const Product = ({
 	product: {
@@ -31,9 +31,17 @@ export const Product = ({
 	console.warn('Неиспользуемые пропсы в Product:', props)
 	const [isReviewOpened, toggleReviewOpened] = useState<boolean>(false)
 	const handleReviewOpened = () => toggleReviewOpened(preview => !preview)
+	const reviewRef = useRef<HTMLDivElement>(null)
+	const scrollToReview = () => {
+		toggleReviewOpened(true)
+		reviewRef.current?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		})
+	}
 
 	return (
-		<>
+		<div>
 			<Card className={styles.card}>
 				<div className={styles.top}>
 					<div className={styles.topTitle}>
@@ -70,10 +78,12 @@ export const Product = ({
 							</div>
 							<P>в кредит</P>
 						</div>
-						<div className={styles.rating}>
+						<div className={styles.rateTitle}>
 							<Rating rating={reviewAvg || initialRating} />
 							<P>
-								{reviewCount} {declOfNumber(reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+								<a href='#ref' onClick={scrollToReview}>
+									{reviewCount} {declOfNumber(reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+								</a>
 							</P>
 						</div>
 					</div>
@@ -119,13 +129,13 @@ export const Product = ({
 				</div>
 			</Card>
 			{reviews && reviews.length > 0 && (
-				<Card className={classNames(styles.reviews, { [styles.closed]: !isReviewOpened })} color='blue'>
+				<Card ref={reviewRef} className={classNames(styles.reviews, { [styles.closed]: !isReviewOpened })} color='blue'>
 					{reviews.map(review => (
 						<Review key={review._id} review={review} />
 					))}
 					<ReviewForm productId={_id} />
 				</Card>
 			)}
-		</>
+		</div>
 	)
 }
