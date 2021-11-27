@@ -32,7 +32,7 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 				<Sort sort={sort} setSort={handleSort} isAscending={isAscending} />
 			</section>
 			<section className={styles.productsSection}>
-				{sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} />)}
+				{sortedProducts && sortedProducts.map(p => <Product layout key={p._id} product={p} />)}
 			</section>
 			{page.hh && (
 				<section className={styles.hhSection}>
