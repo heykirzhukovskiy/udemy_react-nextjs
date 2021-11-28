@@ -1,0 +1,138 @@
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable string-quotes */
+/* stylelint-disable selector-class-pattern */
+.icon {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s;
+	width: fit-content;
+}
+
+.icon::after,
+.icon::before {
+	position: absolute;
+	content: '';
+	display: block;
+	background-color: var(--white);
+}
+
+/* Sizes */
+
+.M::after,
+.M::before {
+	width: 3px;
+	border-radius: 2px;
+}
+
+.S::after,
+.S::before {
+	width: 1px;
+	border-radius: 2px;
+}
+
+/* Colors */
+.white::after,
+.white::before {
+	background-color: var(--white);
+}
+
+.black::after,
+.black::before {
+	background-color: var(--black);
+}
+
+.primary::after,
+.primary::before {
+	background-color: var(--primary);
+}
+
+.green::after,
+.green::before {
+	background-color: var(--green);
+}
+
+/* Directions */
+.Left {
+	transform: rotate(180deg);
+}
+
+.Up {
+	transform: rotate(-90deg);
+}
+
+.Down {
+	transform: rotate(90deg);
+}
+
+/* Types */
+
+.Arrow.S::after {
+	height: 7px;
+	bottom: calc(50% - 1px);
+}
+.Arrow.S::before {
+	height: 7px;
+	top: calc(50% - 1px);
+}
+
+.Arrow::after {
+	height: 14px;
+	bottom: calc(50% - 3px);
+	transform: rotate(-45deg);
+}
+
+.Arrow::before {
+	height: 14px;
+	top: calc(50% - 3px);
+	transform: rotate(45deg);
+}
+
+.Close::after {
+	transform: rotate(-45deg);
+}
+
+.Close::before {
+	transform: rotate(45deg);
+}
+
+.Check {
+	min-height: auto;
+	min-width: auto;
+}
+
+.Check::after {
+	width: 4px;
+	right: 4px;
+	top: -5px;
+	height: 15px;
+	transform: rotate(-45deg);
+}
+
+.Check::before {
+	width: 4px;
+	left: 3px;
+	height: 20px;
+	transform: rotate(45deg);
+}
+
+.Burger {
+	width: 20px;
+	height: 3px;
+	border-radius: 5px;
+	background-color: var(--white);
+}
+.Burger::after,
+.Burger::before {
+	width: 20px;
+	height: 3px;
+}
+
+.Burger::after {
+	bottom: 7px;
+}
+
+.Burger::before {
+	top: 7px;
+}

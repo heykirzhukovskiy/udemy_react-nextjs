@@ -1,52 +1,51 @@
 .button {
-  display: inline-block;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid;
-  font-size: 14px;
-  padding: 10px;
-  margin: 0;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.3s;
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0;
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.3s;
 }
 
 .primary {
-  border-color: var(--white);
-  background: var(--primary);
-  color: var(--white);
+	border-color: var(--white);
+	background: var(--primary);
+	color: var(--white);
 }
 
 .primary:hover {
-  background: var(--primary-hover);
+	background: var(--primary-hover);
 }
 
 .ghost {
-  border-color: var(--grey);
-  background: none;
-  color: var(--black);
+	border-color: var(--grey);
+	background: none;
+	color: var(--black);
 }
 
 .ghost:hover {
-  background: var(--primary);
-  color: var(--white);
+	background: var(--primary);
+	color: var(--white);
 }
 
 .arrow {
-  margin-left: 10px;
-  display: inline-block;
-  transition: all 0.3s;
+	width: 6px;
+	margin-left: 10px;
 }
 
-.arrow svg {
-  transition: all 0.3s;
+.arrow::after,
+.arrow::before {
+	height: 8px;
 }
 
-.down {
-  transform: rotate(90deg);
-}
-
-.primary svg,
-.ghost:hover svg {
-  fill: var(--white);
+.primary .arrow::after,
+.primary .arrow::before,
+.ghost:hover .arrow::after,
+.ghost:hover .arrow::before {
+	background-color: var(--white);
 }

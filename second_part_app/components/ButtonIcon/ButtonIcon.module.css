@@ -1,0 +1,34 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 5px;
+	padding: 0;
+	margin: 0;
+	min-width: 40px;
+	min-height: 40px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.primary {
+	background: var(--primary);
+}
+
+.primary:hover {
+	background: var(--primary-hover);
+}
+
+.ghost {
+	background: none;
+}
+
+.ghost:hover {
+	background: var(--primary);
+}
+
+.icon {
+	height: 14px;
+}

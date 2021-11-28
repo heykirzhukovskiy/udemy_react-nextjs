@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { Card } from '..'
 import { priceRU } from '../../helpers/helpers'
 import styles from './HhData.module.css'
