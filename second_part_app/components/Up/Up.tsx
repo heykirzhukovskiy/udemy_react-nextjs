@@ -27,7 +27,7 @@ export const Up = (): JSX.Element => {
 			onClick={scrollToTop}
 			className={classNames(styles.wrapper)}
 		>
-			<ButtonIcon appearance='primary' icon={IconTypes.arrow} color='white' direction='Up' />
+			<ButtonIcon title='Go up' appearance='primary' icon={IconTypes.arrow} color='white' direction='Up' />
 		</motion.div>
 	)
 }

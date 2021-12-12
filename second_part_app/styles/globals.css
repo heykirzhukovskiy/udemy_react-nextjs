@@ -19,13 +19,13 @@ a {
 :root {
 	--background: #f5f6f8;
 	--black: #3b434e;
-	--gray: #b3c0d9;
+	--gray: #6c7077;
 	--grey: #ebebeb;
 	--white: white;
-	--primary: #7653fc;
+	--primary: #7351f5;
 	--primary-hover: #6541f7;
 	--red: #fc836d;
-	--green: #1dc47e;
+	--green: #127a4e;
 	--green-light: #c8f8e4;
-	--font-family: "Noto Sans KR", sans-serif;
+	--font-family: 'Noto Sans KR', sans-serif;
 }

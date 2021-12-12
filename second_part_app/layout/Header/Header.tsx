@@ -34,7 +34,13 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 	return (
 		<header className={classNames(styles.header, className)} {...props}>
 			<Logo />
-			<ButtonIcon onClick={() => setMenuShown(true)} appearance='ghost' color='primary' icon={IconTypes.burger} />
+			<ButtonIcon
+				title='Open menu'
+				onClick={() => setMenuShown(true)}
+				appearance='ghost'
+				color='primary'
+				icon={IconTypes.burger}
+			/>
 			<motion.div
 				className={classNames(styles.mobileMenu)}
 				variants={variants}
@@ -43,6 +49,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 			>
 				<Sidebar />
 				<ButtonIcon
+					title='Close menu'
 					appearance='ghost'
 					icon={IconTypes.close}
 					color='primary'

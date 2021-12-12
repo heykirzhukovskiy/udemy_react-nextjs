@@ -32,7 +32,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 				onChange={e => setSearch(e.target.value)}
 				onKeyDown={onEnterPressHandler}
 			/>
-			<Button className={styles.button} onClick={goToSearch} appearance='primary'>
+			<Button title='Search' className={styles.button} onClick={goToSearch} appearance='primary'>
 				<SearchIcon />
 			</Button>
 		</div>
