@@ -11,12 +11,7 @@ export const ButtonIcon = ({
 	color,
 	...props
 }: ButtonIconProps): JSX.Element => (
-	<button
-		className={classNames(styles.button, className, {
-			[styles.primary]: appearance == 'primary',
-			[styles.ghost]: appearance == 'ghost',
-		})}
-	>
+	<button className={classNames(styles.button, className, styles[appearance])} {...props}>
 		<Icon color={color} icon={icon} direction={direction} className={styles.icon} />
 	</button>
 )

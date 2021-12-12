@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 	border: none;
 	border-radius: 5px;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
 	padding: 0;
 	margin: 0;
 	min-width: 40px;
@@ -22,11 +23,35 @@
 }
 
 .ghost {
-	background: none;
+	background: var(--white);
 }
 
 .ghost:hover {
 	background: var(--primary);
+}
+
+.primary span,
+.primary span::after,
+.primary span::before {
+	background-color: var(--white);
+}
+
+.ghost span,
+.ghost span::after,
+.ghost span::before {
+	background-color: var(--primary);
+}
+
+.primary:hover span,
+.primary:hover span::after,
+.primary:hover span::before {
+	background-color: var(--primary);
+}
+
+.ghost:hover span,
+.ghost:hover span::after,
+.ghost:hover span::before {
+	background-color: var(--white);
 }
 
 .icon {

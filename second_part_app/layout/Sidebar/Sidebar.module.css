@@ -1,7 +1,5 @@
-@media screen and (min-width: 1024px) {
-	.sidebar {
-		display: grid;
-		align-content: flex-start;
-		gap: 20px;
-	}
+.sidebar {
+	display: grid;
+	align-content: flex-start;
+	gap: 20px;
 }

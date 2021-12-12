@@ -16,6 +16,7 @@
 	content: '';
 	display: block;
 	background-color: var(--white);
+	transition: all 0.3s;
 }
 
 /* Sizes */
@@ -43,6 +44,7 @@
 	background-color: var(--black);
 }
 
+.primary,
 .primary::after,
 .primary::before {
 	background-color: var(--primary);
@@ -89,12 +91,16 @@
 	transform: rotate(45deg);
 }
 
+.Close {
+	background-color: transparent;
+}
 .Close::after {
 	transform: rotate(-45deg);
+	height: 23px;
 }
-
 .Close::before {
 	transform: rotate(45deg);
+	height: 23px;
 }
 
 .Check {
@@ -121,7 +127,6 @@
 	width: 20px;
 	height: 3px;
 	border-radius: 5px;
-	background-color: var(--white);
 }
 .Burger::after,
 .Burger::before {
