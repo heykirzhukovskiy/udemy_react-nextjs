@@ -6,6 +6,20 @@
 	min-height: 100vh;
 }
 
+.skipLink {
+	position: fixed;
+	left: 100px;
+	top: 0;
+	overflow: hidden;
+	height: 0;
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+.displayedLink {
+	height: auto;
+}
+
 .header {
 	grid-area: header;
 }
@@ -18,6 +32,10 @@
 .body {
 	grid-area: body;
 	padding: 15px;
+}
+
+.body:focus {
+	outline: none;
 }
 
 .footer {

@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useContext } from 'react'
+import { KeyboardEvent, useContext } from 'react'
 import { AppContext } from '../../context/app.context'
 import { firstLevelMenu } from '../../helpers/helpers'
 import { PageItem } from '../../interfaces/menu.interface'
@@ -49,6 +49,13 @@ export const Menu = (): JSX.Element => {
 			)
 	}
 
+	const openSecondLevelByKey = (event: KeyboardEvent, secondCategory: string) => {
+		if (event.code === 'Enter' || event.code === 'Space') {
+			event.preventDefault()
+			openSecondMenu(secondCategory)
+		}
+	}
+
 	const buildFirstLevel = () =>
 		firstLevelMenu.map(menu => {
 			const isActive = asPath.includes(menu.route)
@@ -60,6 +67,7 @@ export const Menu = (): JSX.Element => {
 							className={classNames(styles.firstLevel, {
 								[styles.firstLevelActive]: isActive,
 							})}
+							title={menu.name}
 						>
 							{menu.icon} <span>{menu.name}</span>
 						</a>
@@ -78,7 +86,13 @@ export const Menu = (): JSX.Element => {
 			}
 			return (
 				<li key={menuItem._id.secondCategory} className={classNames(styles.secondLevel)}>
-					<span onClick={() => openSecondMenu(menuItem._id.secondCategory)}>{menuItem._id.secondCategory}</span>
+					<span
+						tabIndex={0}
+						onKeyDown={(event: KeyboardEvent) => openSecondLevelByKey(event, menuItem._id.secondCategory)}
+						onClick={() => openSecondMenu(menuItem._id.secondCategory)}
+					>
+						{menuItem._id.secondCategory}
+					</span>
 					<motion.ul
 						layout
 						variants={secondLevelAnim}
@@ -86,13 +100,13 @@ export const Menu = (): JSX.Element => {
 						animate={menuItem.isOpen ? 'visible' : 'hidden'}
 						className={classNames(styles.secondLevelSub, { [styles.secondLevelSubOpen]: menuItem.isOpen })}
 					>
-						{buildThirdLevel(menuItem.pages, route)}
+						{buildThirdLevel(menuItem.pages, route, menuItem.isOpen)}
 					</motion.ul>
 				</li>
 			)
 		})
 
-	const buildThirdLevel = (pages: PageItem[], route: string) =>
+	const buildThirdLevel = (pages: PageItem[], route: string, shouldHaveTabIndex?: boolean) =>
 		pages.map(page => (
 			<motion.li
 				variants={thirdLevelAnim}
@@ -102,7 +116,9 @@ export const Menu = (): JSX.Element => {
 				})}
 			>
 				<Link href={`/${route}/${page.alias}`}>
-					<a>{page.category}</a>
+					<a tabIndex={shouldHaveTabIndex ? 0 : 1} title={page.category}>
+						{page.category}
+					</a>
 				</Link>
 			</motion.li>
 		))

@@ -6,7 +6,6 @@
 	height: 24px;
 	margin-bottom: 22px;
 	font-size: 18px;
-	line-height: 24px;
 	transition: all 0.3s;
 }
 
@@ -35,7 +34,6 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 300;
-	line-height: 16px;
 	color: var(--gray);
 	transition: all 0.3s;
 }
@@ -63,11 +61,11 @@
 .secondLevelSub {
 	overflow: hidden;
 	font-size: 14px;
-	line-height: 19px;
 	font-weight: 500;
 	text-transform: none;
 	list-style: none;
 	padding: 0;
+	padding-inline-start: 1px;
 	transition: all 0.3s;
 }
 
