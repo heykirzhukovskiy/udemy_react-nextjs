@@ -7,7 +7,11 @@ export const TextArea = forwardRef(
 	({ className, error, rows = 3, ...props }: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => (
 		<div className={classNames(className, styles.textareaWrap)}>
 			<textarea rows={rows} className={classNames(styles.textarea, { [styles.error]: !!error })} ref={ref} {...props} />
-			{error && <span className={styles.errorMessage}>{error.message}</span>}
+			{error && (
+				<span role='alert' className={styles.errorMessage}>
+					{error.message}
+				</span>
+			)}
 		</div>
 	),
 )

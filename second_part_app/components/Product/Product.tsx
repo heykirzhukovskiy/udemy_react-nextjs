@@ -43,6 +43,7 @@ export const Product = motion(
 					behavior: 'smooth',
 					block: 'start',
 				})
+				reviewRef.current?.focus()
 			}
 			const variants = {
 				visible: {
@@ -52,6 +53,7 @@ export const Product = motion(
 				hidden: {
 					opacity: 0,
 					height: 0,
+					overflow: 'hidden',
 				},
 			}
 
@@ -135,24 +137,33 @@ export const Product = motion(
 						</div>
 						<hr className={styles.hr} />
 						<div className={styles.bottom}>
-							<Button appearance='primary'>Узнать подробнее</Button>
+							<Button tabIndex={0} appearance='primary'>
+								Узнать подробнее
+							</Button>
 							{reviews && reviews.length > 0 && (
-								<Button onClick={handleReviewOpened} appearance='ghost' arrow={isReviewOpened ? 'Down' : 'Right'}>
+								<Button
+									tabIndex={0}
+									onClick={handleReviewOpened}
+									appearance='ghost'
+									arrow={isReviewOpened ? 'Down' : 'Right'}
+									aria-expanded={isReviewOpened}
+								>
 									Читать отзывы
 								</Button>
 							)}
 						</div>
 					</Card>
-					{reviews && reviews.length > 0 && (
-						<motion.div layout animate={isReviewOpened ? 'visible' : 'hidden'} initial={'hidden'} variants={variants}>
-							<Card ref={reviewRef} className={classNames(styles.reviews)} color='blue'>
-								{reviews.map(review => (
-									<Review key={review._id} review={review} />
-								))}
-								<ReviewForm productId={_id} />
-							</Card>
-						</motion.div>
-					)}
+					<motion.div layout animate={isReviewOpened ? 'visible' : 'hidden'} initial={'hidden'} variants={variants}>
+						<Card
+							ref={reviewRef}
+							className={classNames(styles.reviews)}
+							color='blue'
+							tabIndex={isReviewOpened ? 0 : -1}
+						>
+							{reviews && reviews.length > 0 && reviews.map(review => <Review key={review._id} review={review} />)}
+							<ReviewForm productId={_id} isOpened={isReviewOpened} />
+						</Card>
+					</motion.div>
 				</div>
 			)
 		},

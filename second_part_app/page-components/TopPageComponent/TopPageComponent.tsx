@@ -20,6 +20,10 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
 
 	const handleSort = (sort: SortEnum) => dispatchSort({ type: sort })
 
+	if (!page) {
+		return <></>
+	}
+
 	return (
 		<div className={styles.wrap}>
 			<section className={styles.title}>

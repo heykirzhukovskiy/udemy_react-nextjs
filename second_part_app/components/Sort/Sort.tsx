@@ -1,13 +1,23 @@
 import { SortEnum, SortProps } from './Sort.props'
 import styles from './Sort.module.css'
 import classNames from 'classnames'
+import { KeyboardEvent } from 'react'
 
 export const Sort = ({ sort, setSort, isAscending, className, ...props }: SortProps): JSX.Element => {
+	const keyDownHandler = (event: KeyboardEvent<HTMLSpanElement>, sortParam: SortEnum) => {
+		if (event.code === 'Enter' || event.code === 'Space') {
+			event.preventDefault()
+			setSort(sortParam)
+		}
+	}
+
 	return (
 		<div className={classNames(styles.sort, className)} {...props}>
-			<span
+			<button
 				className={classNames(styles.sortItem, { [styles.active]: sort === SortEnum.Rating })}
 				onClick={() => setSort(SortEnum.Rating)}
+				onKeyDown={e => keyDownHandler(e, SortEnum.Rating)}
+				tabIndex={0}
 			>
 				<div
 					className={classNames(styles.sortIcon, {
@@ -16,10 +26,12 @@ export const Sort = ({ sort, setSort, isAscending, className, ...props }: SortPr
 					})}
 				/>
 				По рейтингу
-			</span>
-			<span
+			</button>
+			<button
 				className={classNames(styles.sortItem, { [styles.active]: sort === SortEnum.Price })}
 				onClick={() => setSort(SortEnum.Price)}
+				onKeyDown={e => keyDownHandler(e, SortEnum.Price)}
+				tabIndex={0}
 			>
 				<div
 					className={classNames(styles.sortIcon, {
@@ -28,7 +40,7 @@ export const Sort = ({ sort, setSort, isAscending, className, ...props }: SortPr
 					})}
 				/>
 				По цене
-			</span>
+			</button>
 		</div>
 	)
 }

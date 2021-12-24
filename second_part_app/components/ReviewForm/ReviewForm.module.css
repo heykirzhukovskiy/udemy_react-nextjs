@@ -71,6 +71,7 @@
 	height: 12px;
 	padding: 13px;
 	border-radius: 3px;
+	border: none;
 	cursor: pointer;
 	background-color: transparent;
 	transition: all 0.3s;

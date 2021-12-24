@@ -61,26 +61,27 @@ export const Menu = (): JSX.Element => {
 			const isActive = asPath.includes(menu.route)
 
 			return (
-				<div key={menu.route}>
+				<li key={menu.route}>
 					<Link href={`/${menu.route}`}>
 						<a
 							className={classNames(styles.firstLevel, {
 								[styles.firstLevelActive]: isActive,
 							})}
 							title={menu.name}
+							tabIndex={0}
 						>
 							{menu.icon} <span>{menu.name}</span>
 						</a>
 					</Link>
 					<ul className={classNames(styles.firstLevelSub, { [styles.firstLevelSubOpen]: isActive })}>
-						{buildSecondLevel(menu.route)}
+						{isActive && buildSecondLevel(menu.route)}
 					</ul>
-				</div>
+				</li>
 			)
 		})
 
 	const buildSecondLevel = (route: string) =>
-		menu.map(menuItem => {
+		menu?.map(menuItem => {
 			if (menuItem.pages.map(page => page.alias).includes(asPath.split('/')[2])) {
 				menuItem.isOpen = true
 			}
@@ -107,7 +108,7 @@ export const Menu = (): JSX.Element => {
 		})
 
 	const buildThirdLevel = (pages: PageItem[], route: string, shouldHaveTabIndex?: boolean) =>
-		pages.map(page => (
+		pages?.map(page => (
 			<motion.li
 				variants={thirdLevelAnim}
 				key={page._id}
@@ -116,12 +117,16 @@ export const Menu = (): JSX.Element => {
 				})}
 			>
 				<Link href={`/${route}/${page.alias}`}>
-					<a tabIndex={shouldHaveTabIndex ? 0 : 1} title={page.category}>
+					<a tabIndex={shouldHaveTabIndex ? 0 : -1} title={page.category}>
 						{page.category}
 					</a>
 				</Link>
 			</motion.li>
 		))
 
-	return <nav className={styles.menu}>{buildFirstLevel()}</nav>
+	return (
+		<nav className={styles.menu}>
+			<ul>{buildFirstLevel()}</ul>
+		</nav>
+	)
 }
