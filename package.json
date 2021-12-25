@@ -2,6 +2,7 @@
 	"name": "second_part_app",
 	"version": "0.1.0",
 	"scripts": {
+		"prepare": "cd .. && husky install",
 		"dev": "next dev",
 		"debug": "NODE_OPTIONS='--inspect' next dev",
 		"build": "next build",
@@ -16,10 +17,12 @@
 		"date-fns": "^2.26.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"framer-motion": "^5.3.3",
+		"husky": "^7.0.4",
 		"jest": "^27.3.1",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"react-hook-form": "^7.20.2"
+		"react-hook-form": "^7.20.2",
+		"react-yandex-metrika": "^2.6.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0-0",
