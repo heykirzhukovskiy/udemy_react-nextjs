@@ -19,12 +19,12 @@
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"framer-motion": "^5.3.3",
 		"husky": "^7.0.4",
-		"jest": "^27.3.1",
+		"next": "^12.0.4",
+		"prop-types": "^15.8.0",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"react-hook-form": "^7.20.2",
-		"react-yandex-metrika": "^2.6.0",
-		"stylelint-disable": "^0.1.5"
+		"react-yandex-metrika": "^2.6.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0-0",
@@ -36,10 +36,11 @@
 		"@typescript-eslint/parser": "^4.28.5",
 		"eslint": "^8.3.0",
 		"eslint-config-next": "^12.0.4",
-		"next": "^12.0.4",
+		"jest": "^27.3.1",
 		"postcss": "*",
 		"stylelint": "^14.0.1",
 		"stylelint-config-standard": "^24.0.0",
+		"stylelint-disable": "^0.1.5",
 		"stylelint-order": "*",
 		"typescript": "^4.5.2"
 	}
