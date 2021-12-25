@@ -2,7 +2,7 @@ import { Card } from '..'
 import { priceRU } from '../../helpers/helpers'
 import styles from './HhData.module.css'
 import { HHDataProps } from './HhData.props'
-import Star from './Star.svg'
+import Star from './star.svg'
 
 export const HHData = ({ count, juniorSalary, middleSalary, seniorSalary }: HHDataProps): JSX.Element => (
 	<div className={styles.hh}>
