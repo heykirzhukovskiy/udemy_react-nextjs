@@ -106,7 +106,7 @@
 	padding: 0;
 	margin: 0 15px;
 	border: none;
-	border-top: 1px dashed #c4c4c4;
+	border-top: 1px dashed #C4C4C4;
 }
 
 .characteristic {
@@ -139,7 +139,7 @@
 
 .advantages::before,
 .downsides::before {
-	content: '';
+	content: "";
 	display: block;
 	position: absolute;
 	left: 0;
@@ -149,7 +149,7 @@
 }
 
 .advantages::before {
-	background-color: #2dbf82;
+	background-color: #2DBF82;
 }
 
 .downsides::before {
@@ -216,6 +216,7 @@
 	.middle {
 		grid-template-columns: 1fr;
 	}
+
 	.bottom {
 		grid-auto-flow: row;
 		gap: 10px;
@@ -228,7 +229,7 @@
 	}
 
 	.closed {
-		padding: 0px;
-		max-height: 0px;
+		padding: 0;
+		max-height: 0;
 	}
 }

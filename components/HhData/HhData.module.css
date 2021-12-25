@@ -67,7 +67,7 @@
 }
 
 .rateStar {
-	fill: #bbbbbb;
+	fill: #BBB;
 }
 
 .rateStarFilled {
@@ -79,6 +79,7 @@
 		grid-template-columns: 1fr 1px 1fr 1px 1fr;
 		gap: unset;
 	}
+
 	.salaryHr {
 		height: 98px;
 		width: 1px;

@@ -2,7 +2,7 @@
 	"name": "second_part_app",
 	"version": "0.1.0",
 	"scripts": {
-		"prepare": "cd .. && husky install",
+		"prepare": "husky install",
 		"dev": "next dev",
 		"debug": "NODE_OPTIONS='--inspect' next dev",
 		"build": "next build",

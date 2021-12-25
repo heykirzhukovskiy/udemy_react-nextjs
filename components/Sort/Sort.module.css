@@ -25,7 +25,7 @@
 .sortIcon {
 	display: flex;
 	position: relative;
-	width: 0px;
+	width: 0;
 	height: 3px;
 	border-radius: 2px;
 	background-color: var(--primary);
@@ -36,11 +36,11 @@
 
 .sortIcon::after,
 .sortIcon::before {
-	content: '';
+	content: "";
 	display: block;
 	position: absolute;
 	height: 3px;
-	width: 0px;
+	width: 0;
 	border-radius: 2px;
 	background-color: var(--primary);
 	transition: all 0.3s;

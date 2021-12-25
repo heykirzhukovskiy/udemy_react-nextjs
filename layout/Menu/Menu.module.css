@@ -29,7 +29,6 @@
 	height: 0;
 	overflow: hidden;
 	margin: 0;
-	transition: all 0.3s;
 	list-style: none;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -45,7 +44,7 @@
 	content: none;
 	width: 1px;
 	height: 100%;
-	background: #dfdfdf;
+	background: #DFDFDF;
 }
 
 .firstLevelSubOpen {

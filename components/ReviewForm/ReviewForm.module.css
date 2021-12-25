@@ -84,7 +84,7 @@
 .closeIcon::after,
 .closeIcon::before {
 	position: absolute;
-	content: '';
+	content: "";
 	display: block;
 	width: 3px;
 	height: 12px;
