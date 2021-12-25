@@ -59,7 +59,7 @@ export const ReviewForm = ({ productId, isOpened }: ReviewFormProps): JSX.Elemen
 				<Controller
 					control={control}
 					name='rating'
-					rules={{ required: { value: true, message: 'Fill meeee' } }}
+					rules={{ required: { value: true, message: 'Fill me' } }}
 					render={({ field: { value, onChange, ...field } }) => (
 						<Rating error={errors.rating} rating={value} isEditable setRating={onChange} {...field} />
 					)}
@@ -72,7 +72,7 @@ export const ReviewForm = ({ productId, isOpened }: ReviewFormProps): JSX.Elemen
 				tabIndex={isOpened ? 0 : -1}
 				aria-label='Текст отзыва'
 				aria-invalid={!!errors.description}
-				{...register('description', { required: { value: true, message: 'And meeeeeeee' } })}
+				{...register('description', { required: { value: true, message: 'And me' } })}
 			/>
 			<div className={classNames(styles.action, styles.fullWidth)}>
 				<Button appearance='primary' type='submit' onClick={() => clearErrors()}>

@@ -2028,7 +2028,7 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.2.0.tgz"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-anymatch@^3.0.3, anymatch@~3.1.1:
+anymatch@^3.0.3, anymatch@^3.1.1, anymatch@~3.1.1:
   version "3.1.2"
   resolved "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz"
   integrity sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==
@@ -6193,6 +6193,14 @@ stylelint-config-standard@^24.0.0:
   integrity sha512-+RtU7fbNT+VlNbdXJvnjc3USNPZRiRVp/d2DxOF/vBDDTi0kH5RX2Ny6errdtZJH3boO+bmqIYEllEmok4jiuw==
   dependencies:
     stylelint-config-recommended "^6.0.0"
+
+stylelint-disable@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/stylelint-disable/-/stylelint-disable-0.1.5.tgz#6091e0bebfc0755267807b01e447b8841ccacbac"
+  integrity sha512-EJqGoTCG0HU9sE8zC51g8LJ+E4HYLEGBXJv4/ThOvq0KbGEA2gByyL5KFD7gat0KLB+lpAUvFKbRNvXxo3KTqg==
+  dependencies:
+    anymatch "^3.1.1"
+    minimist "^1.2.0"
 
 stylelint-order@*:
   version "5.0.0"

@@ -125,8 +125,8 @@ export const Menu = (): JSX.Element => {
 		))
 
 	return (
-		<nav className={styles.menu}>
-			<ul>{buildFirstLevel()}</ul>
+		<nav>
+			<ul className={styles.menu}>{buildFirstLevel()}</ul>
 		</nav>
 	)
 }

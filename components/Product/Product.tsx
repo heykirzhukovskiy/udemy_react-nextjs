@@ -1,12 +1,11 @@
-import { ProductProps } from './Product.props'
-import styles from './Product.module.css'
-import { Button, Card, Htag, P, Review, ReviewForm, Tag } from '..'
-import { Rating } from '../Rating'
-import { declOfNumber, priceRU } from '../../helpers/helpers'
-import Image from 'next/image'
 import classNames from 'classnames'
-import { ForwardedRef, forwardRef, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { ForwardedRef, forwardRef, useRef, useState } from 'react'
+import { Button, Card, Htag, P, Review, ReviewForm, Tag } from '..'
+import { declOfNumber, priceRU } from '../../helpers/helpers'
+import { Rating } from '../Rating'
+import styles from './Product.module.css'
+import { ProductProps } from './Product.props'
 
 export const Product = motion(
 	forwardRef(
@@ -62,13 +61,12 @@ export const Product = motion(
 					<Card className={styles.card}>
 						<div className={styles.top}>
 							<div className={styles.topTitle}>
-								<Image
+								<img
 									className={styles.logo}
 									width={70}
 									height={70}
 									src={process.env.NEXT_PUBLIC_DOMAIN + image}
 									alt={title}
-									layout='fixed'
 								/>
 								<div className={styles.titleWrap}>
 									<div className={styles.title}>

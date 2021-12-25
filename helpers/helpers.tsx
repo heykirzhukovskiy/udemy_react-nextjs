@@ -14,9 +14,11 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 
 export const priceRU = (price: number): string =>
 	price
-		.toString()
-		.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-		.concat(' ₽')
+		? price
+				.toString()
+				.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+				.concat(' ₽')
+		: ''
 
 export const declOfNumber = (number: number, titles: [string, string, string]): string => {
 	const cases = [2, 0, 1, 1, 1, 2]

@@ -1,6 +1,7 @@
 {
 	"extends": ["stylelint-config-standard"],
 	"plugins": ["stylelint-order"],
+	"ignoreFiles": ["out/**/*.css"],
 	"rules": {
 		"indentation": ["tab"],
 		"color-hex-case": "upper",
